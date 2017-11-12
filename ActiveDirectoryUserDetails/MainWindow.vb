@@ -11,10 +11,14 @@
 Imports System.Deployment.Application
 Imports System.Reflection
 Imports System.Globalization
+Imports System.IO
 
 Public Class MainWindow
 
     Dim booDomain As Boolean
+    Dim sr_importusers As StreamReader
+    Dim sw_exportusers As StreamWriter
+    Dim UserDetails As New clsUser
 
     Private Sub MainWindow_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
@@ -30,7 +34,7 @@ Public Class MainWindow
         Catch ex As Exception
             Text = "Workgroup User Details"
             gbxUserDetails.Text = "Workgroup User Details"
-            lblADUser.Text = "Enter Worgroup User Name"
+            lblADUser.Text = "Enter Workgroup User Name"
             lblDomain.Text = "Workgroup"
             booDomain = False
 
@@ -63,6 +67,7 @@ Public Class MainWindow
             psi.RedirectStandardInput = True
             psi.RedirectStandardOutput = True
             psi.UseShellExecute = False
+            psi.CreateNoWindow = True
 
             '-- Start the procses
             p = Process.Start(psi)
@@ -108,6 +113,7 @@ Public Class MainWindow
         Dim strUserData() As String
         Dim strDataLine As String
         Dim lngTimeDiffHrs As Long
+        Dim booUserFound As Boolean = False
 
         If txtOutput.Text <> "" Then
 
@@ -120,11 +126,14 @@ Public Class MainWindow
                 '-- Extract user name
                 If strDataLine.StartsWith("User name") Then
                     txtUserName.Text = Mid(strDataLine, gloParamLen)
+                    UserDetails.UserName = txtUserName.Text
+                    booUserFound = True
                 End If
 
                 '-- Extract full user name
                 If strDataLine.StartsWith("Full Name") Then
                     txtFullName.Text = Mid(strDataLine, gloParamLen)
+                    UserDetails.UserFullName = txtFullName.Text
                 End If
 
                 '-- Extract user's comment
@@ -141,11 +150,17 @@ Public Class MainWindow
                 If strDataLine.StartsWith("Account active") Then
                     If Mid(strDataLine, gloParamLen) = "Yes" Then
                         pbxAccountActive.Image = My.Resources.StatusAnnotations_Complete_and_ok_32xLG_color
+                        UserDetails.AccountActive = True
+                        UserDetails.AccountLocked = False
                     Else
                         If Mid(strDataLine, gloParamLen) = "Locked" Then
                             pbxAccountActive.Image = My.Resources.lock_symbol_icon_68326
+                            UserDetails.AccountActive = False
+                            UserDetails.AccountLocked = True
                         Else
                             pbxAccountActive.Image = My.Resources.StatusAnnotations_Critical_32xLG_color
+                            UserDetails.AccountActive = False
+                            UserDetails.AccountLocked = False
                         End If
                     End If
                 End If
@@ -156,6 +171,7 @@ Public Class MainWindow
                     If txtAccountExpires.Text = "Never" Then
                         pbxAccountExpires.Image = My.Resources.StatusAnnotations_Complete_and_ok_32xLG_color
                         txtAccountExpiresDays.Text = ""
+                        UserDetails.AccountExpired = False
                     Else
                         Try
                             lngTimeDiffHrs = DateDiff(DateInterval.Hour, Now, DateTime.Parse(txtAccountExpires.Text))
@@ -170,8 +186,10 @@ Public Class MainWindow
                         End Try
                         If Val(txtAccountExpiresDays.Text) >= 0 Then
                             pbxAccountExpires.Image = My.Resources.StatusAnnotations_Complete_and_ok_32xLG_color
+                            UserDetails.AccountExpired = True
                         Else
                             pbxAccountExpires.Image = My.Resources.StatusAnnotations_Critical_32xLG_color
+                            UserDetails.AccountExpired = False
                         End If
                     End If
                 End If
@@ -198,6 +216,7 @@ Public Class MainWindow
                     If txtPasswordExpires.Text = "Never" Then
                         pbxPasswordExpires.Image = My.Resources.StatusAnnotations_Complete_and_ok_32xLG_color
                         txtPasswordExpiresDays.Text = ""
+                        UserDetails.PasswordExpired = False
                     Else
                         Try
                             lngTimeDiffHrs = DateDiff(DateInterval.Hour, Now, DateTime.Parse(txtPasswordExpires.Text))
@@ -212,8 +231,10 @@ Public Class MainWindow
                         End Try
                         If Val(txtPasswordExpiresDays.Text) >= 0 Then
                             pbxPasswordExpires.Image = My.Resources.StatusAnnotations_Complete_and_ok_32xLG_color
+                            UserDetails.PasswordExpired = False
                         Else
                             pbxPasswordExpires.Image = My.Resources.StatusAnnotations_Critical_32xLG_color
+                            UserDetails.PasswordExpired = True
                         End If
                     End If
                 End If
@@ -295,6 +316,12 @@ Public Class MainWindow
                     End If
                 End If
             Next
+
+            '-- Check if user was found
+            If booUserFound = False Then
+                txtUserName.Text = "No user was found"
+                UserDetails.UserName = txtUserName.Text
+            End If
         End If
 
     End Sub
@@ -343,6 +370,123 @@ Public Class MainWindow
         pbxPasswordExpires.Image = Nothing
         pbxPasswordLastSet.Image = Nothing
         pbxPasswordChangeable.Image = Nothing
+
+    End Sub
+
+    Private Sub btnImportUserNames_Click(sender As Object, e As EventArgs) Handles btnImportUserNames.Click
+
+        Dim ofd As New OpenFileDialog
+
+        '-- Set up open file dialog
+        ofd.Filter = "CSV file|*.csv|Text file|*.txt|All files|*.*"
+        ofd.Title = "Select import users file"
+
+        '-- Import list of users
+        If ofd.ShowDialog = DialogResult.OK Then
+
+            Dim strline As String
+
+            '-- Open import file
+            sr_importusers = New StreamReader(ofd.FileName)
+
+            '-- Read first line & confirm it contains header name
+            strline = sr_importusers.ReadLine
+            If strline.ToUpper = "USER NAMES" Or strline.ToUpper = "USERNAMES" Then
+                txtImportUserNames.Text = ofd.FileName
+                pbxImportUserNames.Image = My.Resources.StatusAnnotations_Complete_and_ok_32xLG_color
+            Else
+                txtImportUserNames.Text = "INVALID HEADER NAME"
+                pbxImportUserNames.Image = My.Resources.StatusAnnotations_Critical_32xLG_color
+            End If
+
+            '-- Enable validate user button
+            If txtImportUserNames.Text = "" Or txtImportUserNames.Text = "INVALID HEADER NAME" Or txtExportFileName.Text = "" Then
+                btnValidateUsers.Enabled = False
+            Else
+                btnValidateUsers.Enabled = True
+            End If
+
+        End If
+
+    End Sub
+
+    Private Sub btnExportFileName_Click(sender As Object, e As EventArgs) Handles btnExportFileName.Click
+
+        Dim sfd As New SaveFileDialog
+        Dim strline As String
+
+        '-- Set up save file dialog
+        sfd.CheckFileExists = False
+        sfd.Title = "Save the exported users file"
+
+        '-- Get file name & location to export the user results
+        If txtImportUserNames.Text <> "" And txtImportUserNames.Text <> "INVALID HEADER NAME" Then
+            'txtExportFileName.Text = Path.GetDirectoryName(txtImportUserNames.Text) & "\" & Path.GetFileNameWithoutExtension(txtImportUserNames.Text) & "_VERIFIED.csv"
+            sfd.InitialDirectory = Path.GetDirectoryName(txtImportUserNames.Text)
+            sfd.FileName = Path.GetFileNameWithoutExtension(txtImportUserNames.Text) & "_VERIFIED.csv"
+            sfd.ShowDialog()
+            txtExportFileName.Text = sfd.FileName
+            sw_exportusers = New StreamWriter(sfd.FileName)
+
+            '-- Write headers
+            strline = "User Name,User Name Found, User Full Name, Account Active, Account Expired, Account Locked"
+            sw_exportusers.WriteLine(strline)
+
+            '-- Enable validate user button
+            If txtImportUserNames.Text = "" Or txtImportUserNames.Text = "INVALID HEADER NAME" Or txtExportFileName.Text = "" Then
+                btnValidateUsers.Enabled = False
+            Else
+                btnValidateUsers.Enabled = True
+            End If
+        Else
+            txtExportFileName.Text = ""
+        End If
+
+    End Sub
+
+    Private Sub btnValidateUsers_Click(sender As Object, e As EventArgs) Handles btnValidateUsers.Click
+
+        Dim strUserResults As String
+        Dim strline As String
+        Dim RecordsProcessed As Integer = 0
+
+        '-- Validate import & export files
+        If txtImportUserNames.Text <> "INVALID HEADER NAME" And txtExportFileName.Text <> "" Then
+
+            '-- Read each user name
+            Do
+
+                '-- Clear any existing user details
+                UserDetails.ClearUserDetails()
+
+                strline = sr_importusers.ReadLine
+
+                '-- Search for user
+                txtADUser.Text = strline
+                btnSearch.PerformClick()
+
+                '-- Extract data
+                strUserResults = strline & "," & UserDetails.UserName & "," & UserDetails.UserFullName & "," & UserDetails.AccountActive & "," & UserDetails.AccountExpired & "," & UserDetails.AccountLocked
+
+                '-- Write result
+                sw_exportusers.WriteLine(strUserResults)
+
+                '-- Update processed records
+                RecordsProcessed += 1
+                txtProcessed.Text = "Records Processed: " & RecordsProcessed
+                txtProcessed.Refresh()
+
+            Loop Until strline Is Nothing
+
+            '-- Close all streams
+            sr_importusers.Close()
+            sw_exportusers.Close()
+
+            '-- Task completed
+            txtProcessed.Text = txtProcessed.Text & " - Completed"
+            btnValidateUsers.Enabled = False
+
+        End If
 
     End Sub
 End Class

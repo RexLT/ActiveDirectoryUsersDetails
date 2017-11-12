@@ -1,0 +1,56 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+ActiveDirectoryUserDetails
+</name>
+</assembly>
+<members>
+<member name="T:ActiveDirectoryUserDetails.My.Resources.Resources">
+<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+<member name="P:ActiveDirectoryUserDetails.My.Resources.Resources.ResourceManager">
+<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member>
+<member name="P:ActiveDirectoryUserDetails.My.Resources.Resources.Culture">
+<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member>
+<member name="P:ActiveDirectoryUserDetails.My.Resources.Resources.lock_symbol_icon_68326">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ActiveDirectoryUserDetails.My.Resources.Resources.StatusAnnotations_Complete_and_ok_32xLG_color">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ActiveDirectoryUserDetails.My.Resources.Resources.StatusAnnotations_Critical_32xLG_color">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ActiveDirectoryUserDetails.My.Resources.Resources.StatusAnnotations_Information_32xLG_color">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ActiveDirectoryUserDetails.My.Resources.Resources.users">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ActiveDirectoryUserDetails.My.Resources.Resources.users1">
+<summary>
+  Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+</summary>
+</member>
+</members>
+</doc>

@@ -70,6 +70,21 @@ Partial Class MainWindow
         Me.Label1 = New System.Windows.Forms.Label()
         Me.tbpCmdResults = New System.Windows.Forms.TabPage()
         Me.txtOutput = New System.Windows.Forms.TextBox()
+        Me.tbpValidateUsers = New System.Windows.Forms.TabPage()
+        Me.txtProcessed = New System.Windows.Forms.TextBox()
+        Me.pbxImportUserNames = New System.Windows.Forms.PictureBox()
+        Me.btnValidateUsers = New System.Windows.Forms.Button()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.cbxPasswordExpired = New System.Windows.Forms.CheckBox()
+        Me.cbxAccountExpired = New System.Windows.Forms.CheckBox()
+        Me.cbxUserName = New System.Windows.Forms.CheckBox()
+        Me.cbxAccountLocked = New System.Windows.Forms.CheckBox()
+        Me.cbxAccountActive = New System.Windows.Forms.CheckBox()
+        Me.txtExportFileName = New System.Windows.Forms.TextBox()
+        Me.btnExportFileName = New System.Windows.Forms.Button()
+        Me.txtImportUserNames = New System.Windows.Forms.TextBox()
+        Me.btnImportUserNames = New System.Windows.Forms.Button()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.btnSearch = New System.Windows.Forms.Button()
         Me.btnClose = New System.Windows.Forms.Button()
         Me.txtDomainName = New System.Windows.Forms.TextBox()
@@ -89,6 +104,9 @@ Partial Class MainWindow
         CType(Me.pbxAccountExpires, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pbxAccountActive, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.tbpCmdResults.SuspendLayout()
+        Me.tbpValidateUsers.SuspendLayout()
+        CType(Me.pbxImportUserNames, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
         'lblADUser
@@ -121,6 +139,7 @@ Partial Class MainWindow
         '
         Me.tbcAnalyser.Controls.Add(Me.tbpAnalysedResults)
         Me.tbcAnalyser.Controls.Add(Me.tbpCmdResults)
+        Me.tbcAnalyser.Controls.Add(Me.tbpValidateUsers)
         Me.tbcAnalyser.Location = New System.Drawing.Point(6, 19)
         Me.tbcAnalyser.Name = "tbcAnalyser"
         Me.tbcAnalyser.SelectedIndex = 0
@@ -545,6 +564,169 @@ Partial Class MainWindow
         Me.txtOutput.Size = New System.Drawing.Size(766, 312)
         Me.txtOutput.TabIndex = 0
         '
+        'tbpValidateUsers
+        '
+        Me.tbpValidateUsers.Controls.Add(Me.txtProcessed)
+        Me.tbpValidateUsers.Controls.Add(Me.pbxImportUserNames)
+        Me.tbpValidateUsers.Controls.Add(Me.btnValidateUsers)
+        Me.tbpValidateUsers.Controls.Add(Me.GroupBox1)
+        Me.tbpValidateUsers.Controls.Add(Me.txtExportFileName)
+        Me.tbpValidateUsers.Controls.Add(Me.btnExportFileName)
+        Me.tbpValidateUsers.Controls.Add(Me.txtImportUserNames)
+        Me.tbpValidateUsers.Controls.Add(Me.btnImportUserNames)
+        Me.tbpValidateUsers.Controls.Add(Me.TextBox1)
+        Me.tbpValidateUsers.Location = New System.Drawing.Point(4, 22)
+        Me.tbpValidateUsers.Name = "tbpValidateUsers"
+        Me.tbpValidateUsers.Padding = New System.Windows.Forms.Padding(3)
+        Me.tbpValidateUsers.Size = New System.Drawing.Size(778, 324)
+        Me.tbpValidateUsers.TabIndex = 2
+        Me.tbpValidateUsers.Text = "Validate Users"
+        Me.tbpValidateUsers.UseVisualStyleBackColor = True
+        '
+        'txtProcessed
+        '
+        Me.txtProcessed.Location = New System.Drawing.Point(24, 286)
+        Me.txtProcessed.Name = "txtProcessed"
+        Me.txtProcessed.Size = New System.Drawing.Size(283, 20)
+        Me.txtProcessed.TabIndex = 10
+        Me.txtProcessed.Text = "Records Processed:"
+        '
+        'pbxImportUserNames
+        '
+        Me.pbxImportUserNames.Location = New System.Drawing.Point(721, 59)
+        Me.pbxImportUserNames.Name = "pbxImportUserNames"
+        Me.pbxImportUserNames.Size = New System.Drawing.Size(20, 27)
+        Me.pbxImportUserNames.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.pbxImportUserNames.TabIndex = 9
+        Me.pbxImportUserNames.TabStop = False
+        '
+        'btnValidateUsers
+        '
+        Me.btnValidateUsers.Enabled = False
+        Me.btnValidateUsers.Location = New System.Drawing.Point(597, 277)
+        Me.btnValidateUsers.Name = "btnValidateUsers"
+        Me.btnValidateUsers.Size = New System.Drawing.Size(157, 37)
+        Me.btnValidateUsers.TabIndex = 6
+        Me.btnValidateUsers.Text = "Validate Users"
+        Me.btnValidateUsers.UseVisualStyleBackColor = True
+        '
+        'GroupBox1
+        '
+        Me.GroupBox1.Controls.Add(Me.cbxPasswordExpired)
+        Me.GroupBox1.Controls.Add(Me.cbxAccountExpired)
+        Me.GroupBox1.Controls.Add(Me.cbxUserName)
+        Me.GroupBox1.Controls.Add(Me.cbxAccountLocked)
+        Me.GroupBox1.Controls.Add(Me.cbxAccountActive)
+        Me.GroupBox1.Location = New System.Drawing.Point(6, 168)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(763, 99)
+        Me.GroupBox1.TabIndex = 5
+        Me.GroupBox1.TabStop = False
+        Me.GroupBox1.Text = "Export Options"
+        '
+        'cbxPasswordExpired
+        '
+        Me.cbxPasswordExpired.AutoSize = True
+        Me.cbxPasswordExpired.Location = New System.Drawing.Point(421, 29)
+        Me.cbxPasswordExpired.Name = "cbxPasswordExpired"
+        Me.cbxPasswordExpired.Size = New System.Drawing.Size(110, 17)
+        Me.cbxPasswordExpired.TabIndex = 7
+        Me.cbxPasswordExpired.Text = "Password Expired"
+        Me.cbxPasswordExpired.UseVisualStyleBackColor = True
+        '
+        'cbxAccountExpired
+        '
+        Me.cbxAccountExpired.AutoSize = True
+        Me.cbxAccountExpired.Checked = True
+        Me.cbxAccountExpired.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.cbxAccountExpired.Location = New System.Drawing.Point(217, 29)
+        Me.cbxAccountExpired.Name = "cbxAccountExpired"
+        Me.cbxAccountExpired.Size = New System.Drawing.Size(104, 17)
+        Me.cbxAccountExpired.TabIndex = 5
+        Me.cbxAccountExpired.Text = "Account Expired"
+        Me.cbxAccountExpired.UseVisualStyleBackColor = True
+        '
+        'cbxUserName
+        '
+        Me.cbxUserName.AutoSize = True
+        Me.cbxUserName.Checked = True
+        Me.cbxUserName.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.cbxUserName.Enabled = False
+        Me.cbxUserName.Location = New System.Drawing.Point(18, 29)
+        Me.cbxUserName.Name = "cbxUserName"
+        Me.cbxUserName.Size = New System.Drawing.Size(77, 17)
+        Me.cbxUserName.TabIndex = 4
+        Me.cbxUserName.Text = "User name"
+        Me.cbxUserName.UseVisualStyleBackColor = True
+        '
+        'cbxAccountLocked
+        '
+        Me.cbxAccountLocked.AutoSize = True
+        Me.cbxAccountLocked.Checked = True
+        Me.cbxAccountLocked.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.cbxAccountLocked.Location = New System.Drawing.Point(217, 63)
+        Me.cbxAccountLocked.Name = "cbxAccountLocked"
+        Me.cbxAccountLocked.Size = New System.Drawing.Size(151, 17)
+        Me.cbxAccountLocked.TabIndex = 1
+        Me.cbxAccountLocked.Text = "Account Locked/Disabled"
+        Me.cbxAccountLocked.UseVisualStyleBackColor = True
+        '
+        'cbxAccountActive
+        '
+        Me.cbxAccountActive.AutoSize = True
+        Me.cbxAccountActive.Checked = True
+        Me.cbxAccountActive.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.cbxAccountActive.Enabled = False
+        Me.cbxAccountActive.Location = New System.Drawing.Point(18, 63)
+        Me.cbxAccountActive.Name = "cbxAccountActive"
+        Me.cbxAccountActive.Size = New System.Drawing.Size(71, 17)
+        Me.cbxAccountActive.TabIndex = 0
+        Me.cbxAccountActive.Text = "Full name"
+        Me.cbxAccountActive.UseVisualStyleBackColor = True
+        '
+        'txtExportFileName
+        '
+        Me.txtExportFileName.Location = New System.Drawing.Point(169, 119)
+        Me.txtExportFileName.Name = "txtExportFileName"
+        Me.txtExportFileName.Size = New System.Drawing.Size(527, 20)
+        Me.txtExportFileName.TabIndex = 4
+        '
+        'btnExportFileName
+        '
+        Me.btnExportFileName.Location = New System.Drawing.Point(6, 110)
+        Me.btnExportFileName.Name = "btnExportFileName"
+        Me.btnExportFileName.Size = New System.Drawing.Size(157, 37)
+        Me.btnExportFileName.TabIndex = 3
+        Me.btnExportFileName.Text = "Export file name"
+        Me.btnExportFileName.UseVisualStyleBackColor = True
+        '
+        'txtImportUserNames
+        '
+        Me.txtImportUserNames.Location = New System.Drawing.Point(169, 66)
+        Me.txtImportUserNames.Name = "txtImportUserNames"
+        Me.txtImportUserNames.Size = New System.Drawing.Size(527, 20)
+        Me.txtImportUserNames.TabIndex = 2
+        '
+        'btnImportUserNames
+        '
+        Me.btnImportUserNames.Location = New System.Drawing.Point(6, 57)
+        Me.btnImportUserNames.Name = "btnImportUserNames"
+        Me.btnImportUserNames.Size = New System.Drawing.Size(157, 37)
+        Me.btnImportUserNames.TabIndex = 1
+        Me.btnImportUserNames.Text = "Import user names"
+        Me.btnImportUserNames.UseVisualStyleBackColor = True
+        '
+        'TextBox1
+        '
+        Me.TextBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox1.Location = New System.Drawing.Point(6, 12)
+        Me.TextBox1.Multiline = True
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(766, 39)
+        Me.TextBox1.TabIndex = 0
+        Me.TextBox1.Text = resources.GetString("TextBox1.Text")
+        Me.TextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
         'btnSearch
         '
         Me.btnSearch.Location = New System.Drawing.Point(716, 16)
@@ -651,6 +833,11 @@ Partial Class MainWindow
         CType(Me.pbxAccountActive, System.ComponentModel.ISupportInitialize).EndInit()
         Me.tbpCmdResults.ResumeLayout(False)
         Me.tbpCmdResults.PerformLayout()
+        Me.tbpValidateUsers.ResumeLayout(False)
+        Me.tbpValidateUsers.PerformLayout()
+        CType(Me.pbxImportUserNames, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -711,4 +898,19 @@ Partial Class MainWindow
     Friend WithEvents Label18 As Label
     Friend WithEvents txtComputerName As TextBox
     Friend WithEvents Label19 As Label
+    Friend WithEvents tbpValidateUsers As TabPage
+    Friend WithEvents txtExportFileName As TextBox
+    Friend WithEvents btnExportFileName As Button
+    Friend WithEvents txtImportUserNames As TextBox
+    Friend WithEvents btnImportUserNames As Button
+    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents GroupBox1 As GroupBox
+    Friend WithEvents cbxAccountLocked As CheckBox
+    Friend WithEvents cbxAccountActive As CheckBox
+    Friend WithEvents btnValidateUsers As Button
+    Friend WithEvents cbxPasswordExpired As CheckBox
+    Friend WithEvents cbxAccountExpired As CheckBox
+    Friend WithEvents cbxUserName As CheckBox
+    Friend WithEvents pbxImportUserNames As PictureBox
+    Friend WithEvents txtProcessed As TextBox
 End Class

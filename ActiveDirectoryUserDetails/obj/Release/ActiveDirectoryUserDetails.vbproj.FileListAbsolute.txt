@@ -1,0 +1,15 @@
+D:\Users\Nigel\Source\Workspaces\My Projects\Active Directory User Details\ActiveDirectoryUserDetails\ActiveDirectoryUserDetails\bin\Release\ActiveDirectoryUserDetails.exe.config
+D:\Users\Nigel\Source\Workspaces\My Projects\Active Directory User Details\ActiveDirectoryUserDetails\ActiveDirectoryUserDetails\bin\Release\ActiveDirectoryUserDetails.exe.manifest
+D:\Users\Nigel\Source\Workspaces\My Projects\Active Directory User Details\ActiveDirectoryUserDetails\ActiveDirectoryUserDetails\bin\Release\ActiveDirectoryUserDetails.application
+D:\Users\Nigel\Source\Workspaces\My Projects\Active Directory User Details\ActiveDirectoryUserDetails\ActiveDirectoryUserDetails\bin\Release\ActiveDirectoryUserDetails.exe
+D:\Users\Nigel\Source\Workspaces\My Projects\Active Directory User Details\ActiveDirectoryUserDetails\ActiveDirectoryUserDetails\bin\Release\ActiveDirectoryUserDetails.pdb
+D:\Users\Nigel\Source\Workspaces\My Projects\Active Directory User Details\ActiveDirectoryUserDetails\ActiveDirectoryUserDetails\bin\Release\ActiveDirectoryUserDetails.xml
+D:\Users\Nigel\Source\Workspaces\My Projects\Active Directory User Details\ActiveDirectoryUserDetails\ActiveDirectoryUserDetails\obj\Release\ActiveDirectoryUserDetails.MainWindow.resources
+D:\Users\Nigel\Source\Workspaces\My Projects\Active Directory User Details\ActiveDirectoryUserDetails\ActiveDirectoryUserDetails\obj\Release\ActiveDirectoryUserDetails.Resources.resources
+D:\Users\Nigel\Source\Workspaces\My Projects\Active Directory User Details\ActiveDirectoryUserDetails\ActiveDirectoryUserDetails\obj\Release\ActiveDirectoryUserDetails.vbproj.GenerateResource.Cache
+D:\Users\Nigel\Source\Workspaces\My Projects\Active Directory User Details\ActiveDirectoryUserDetails\ActiveDirectoryUserDetails\obj\Release\ActiveDirectoryUserDetails.vbproj.CoreCompileInputs.cache
+D:\Users\Nigel\Source\Workspaces\My Projects\Active Directory User Details\ActiveDirectoryUserDetails\ActiveDirectoryUserDetails\obj\Release\ActiveDirectoryUserDetails.exe.manifest
+D:\Users\Nigel\Source\Workspaces\My Projects\Active Directory User Details\ActiveDirectoryUserDetails\ActiveDirectoryUserDetails\obj\Release\ActiveDirectoryUserDetails.application
+D:\Users\Nigel\Source\Workspaces\My Projects\Active Directory User Details\ActiveDirectoryUserDetails\ActiveDirectoryUserDetails\obj\Release\ActiveDirectoryUserDetails.exe
+D:\Users\Nigel\Source\Workspaces\My Projects\Active Directory User Details\ActiveDirectoryUserDetails\ActiveDirectoryUserDetails\obj\Release\ActiveDirectoryUserDetails.xml
+D:\Users\Nigel\Source\Workspaces\My Projects\Active Directory User Details\ActiveDirectoryUserDetails\ActiveDirectoryUserDetails\obj\Release\ActiveDirectoryUserDetails.pdb

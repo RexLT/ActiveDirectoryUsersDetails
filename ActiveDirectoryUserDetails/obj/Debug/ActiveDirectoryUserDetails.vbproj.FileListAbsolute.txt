@@ -1,0 +1,31 @@
+D:\Users\Nigel\Source\Workspaces\Active Directory User Details\ActiveDirectoryUserDetails\ActiveDirectoryUserDetails\bin\Debug\ActiveDirectoryUserDetails.exe.config
+D:\Users\Nigel\Source\Workspaces\Active Directory User Details\ActiveDirectoryUserDetails\ActiveDirectoryUserDetails\bin\Debug\ActiveDirectoryUserDetails.exe.manifest
+D:\Users\Nigel\Source\Workspaces\Active Directory User Details\ActiveDirectoryUserDetails\ActiveDirectoryUserDetails\bin\Debug\ActiveDirectoryUserDetails.application
+D:\Users\Nigel\Source\Workspaces\Active Directory User Details\ActiveDirectoryUserDetails\ActiveDirectoryUserDetails\bin\Debug\ActiveDirectoryUserDetails.exe
+D:\Users\Nigel\Source\Workspaces\Active Directory User Details\ActiveDirectoryUserDetails\ActiveDirectoryUserDetails\bin\Debug\ActiveDirectoryUserDetails.pdb
+D:\Users\Nigel\Source\Workspaces\Active Directory User Details\ActiveDirectoryUserDetails\ActiveDirectoryUserDetails\bin\Debug\ActiveDirectoryUserDetails.xml
+D:\Users\Nigel\Source\Workspaces\Active Directory User Details\ActiveDirectoryUserDetails\ActiveDirectoryUserDetails\obj\Debug\ActiveDirectoryUserDetails.vbprojResolveAssemblyReference.cache
+D:\Users\Nigel\Source\Workspaces\Active Directory User Details\ActiveDirectoryUserDetails\ActiveDirectoryUserDetails\obj\Debug\ActiveDirectoryUserDetails.MainWindow.resources
+D:\Users\Nigel\Source\Workspaces\Active Directory User Details\ActiveDirectoryUserDetails\ActiveDirectoryUserDetails\obj\Debug\ActiveDirectoryUserDetails.Resources.resources
+D:\Users\Nigel\Source\Workspaces\Active Directory User Details\ActiveDirectoryUserDetails\ActiveDirectoryUserDetails\obj\Debug\ActiveDirectoryUserDetails.vbproj.GenerateResource.Cache
+D:\Users\Nigel\Source\Workspaces\Active Directory User Details\ActiveDirectoryUserDetails\ActiveDirectoryUserDetails\obj\Debug\ActiveDirectoryUserDetails.exe.manifest
+D:\Users\Nigel\Source\Workspaces\Active Directory User Details\ActiveDirectoryUserDetails\ActiveDirectoryUserDetails\obj\Debug\ActiveDirectoryUserDetails.application
+D:\Users\Nigel\Source\Workspaces\Active Directory User Details\ActiveDirectoryUserDetails\ActiveDirectoryUserDetails\obj\Debug\ActiveDirectoryUserDetails.exe
+D:\Users\Nigel\Source\Workspaces\Active Directory User Details\ActiveDirectoryUserDetails\ActiveDirectoryUserDetails\obj\Debug\ActiveDirectoryUserDetails.xml
+D:\Users\Nigel\Source\Workspaces\Active Directory User Details\ActiveDirectoryUserDetails\ActiveDirectoryUserDetails\obj\Debug\ActiveDirectoryUserDetails.pdb
+D:\Users\Nigel\Source\Workspaces\My Projects\Active Directory User Details\ActiveDirectoryUserDetails\ActiveDirectoryUserDetails\bin\Debug\ActiveDirectoryUserDetails.exe.config
+D:\Users\Nigel\Source\Workspaces\My Projects\Active Directory User Details\ActiveDirectoryUserDetails\ActiveDirectoryUserDetails\bin\Debug\ActiveDirectoryUserDetails.exe.manifest
+D:\Users\Nigel\Source\Workspaces\My Projects\Active Directory User Details\ActiveDirectoryUserDetails\ActiveDirectoryUserDetails\bin\Debug\ActiveDirectoryUserDetails.application
+D:\Users\Nigel\Source\Workspaces\My Projects\Active Directory User Details\ActiveDirectoryUserDetails\ActiveDirectoryUserDetails\bin\Debug\ActiveDirectoryUserDetails.exe
+D:\Users\Nigel\Source\Workspaces\My Projects\Active Directory User Details\ActiveDirectoryUserDetails\ActiveDirectoryUserDetails\bin\Debug\ActiveDirectoryUserDetails.pdb
+D:\Users\Nigel\Source\Workspaces\My Projects\Active Directory User Details\ActiveDirectoryUserDetails\ActiveDirectoryUserDetails\bin\Debug\ActiveDirectoryUserDetails.xml
+D:\Users\Nigel\Source\Workspaces\My Projects\Active Directory User Details\ActiveDirectoryUserDetails\ActiveDirectoryUserDetails\obj\Debug\ActiveDirectoryUserDetails.MainWindow.resources
+D:\Users\Nigel\Source\Workspaces\My Projects\Active Directory User Details\ActiveDirectoryUserDetails\ActiveDirectoryUserDetails\obj\Debug\ActiveDirectoryUserDetails.Resources.resources
+D:\Users\Nigel\Source\Workspaces\My Projects\Active Directory User Details\ActiveDirectoryUserDetails\ActiveDirectoryUserDetails\obj\Debug\ActiveDirectoryUserDetails.vbproj.GenerateResource.Cache
+D:\Users\Nigel\Source\Workspaces\My Projects\Active Directory User Details\ActiveDirectoryUserDetails\ActiveDirectoryUserDetails\obj\Debug\ActiveDirectoryUserDetails.vbproj.CoreCompileInputs.cache
+D:\Users\Nigel\Source\Workspaces\My Projects\Active Directory User Details\ActiveDirectoryUserDetails\ActiveDirectoryUserDetails\obj\Debug\ActiveDirectoryUserDetails.exe.manifest
+D:\Users\Nigel\Source\Workspaces\My Projects\Active Directory User Details\ActiveDirectoryUserDetails\ActiveDirectoryUserDetails\obj\Debug\ActiveDirectoryUserDetails.application
+D:\Users\Nigel\Source\Workspaces\My Projects\Active Directory User Details\ActiveDirectoryUserDetails\ActiveDirectoryUserDetails\obj\Debug\ActiveDirectoryUserDetails.exe
+D:\Users\Nigel\Source\Workspaces\My Projects\Active Directory User Details\ActiveDirectoryUserDetails\ActiveDirectoryUserDetails\obj\Debug\ActiveDirectoryUserDetails.xml
+D:\Users\Nigel\Source\Workspaces\My Projects\Active Directory User Details\ActiveDirectoryUserDetails\ActiveDirectoryUserDetails\obj\Debug\ActiveDirectoryUserDetails.pdb
+D:\Users\Nigel\Source\Workspaces\My Projects\Active Directory User Details\ActiveDirectoryUserDetails\ActiveDirectoryUserDetails\obj\Debug\ActiveDirectoryUserDetails.vbprojResolveAssemblyReference.cache
